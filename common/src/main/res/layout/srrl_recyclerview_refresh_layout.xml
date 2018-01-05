@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.tywho.common.viewmodel.BaseRefreshRecyclerViewModel" />
+        <variable
+            name="adapterClassName"
+            type="String" />
+
+        <import type="me.tatarka.bindingcollectionadapter2.LayoutManagers" />
+    </data>
+
+
+    <com.tywho.common.widget.CustomerSwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:onRefreshListener="@{viewModel.onRefreshListener}"
+        app:refreshing="@={viewModel.refreshing}">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:simpleItemAnimator="@{safeUnbox(false)}"
+            app:adapter='@{viewModel.adapter}'
+            app:addItemDecoration="@{viewModel.itemDecoration}"
+            app:addOnItemClick="@{viewModel.onItemClickListener}"
+            app:addOnScrollListener="@{viewModel.onScrollListener}"
+            app:itemBinding="@{viewModel.itemViews}"
+            app:items="@{viewModel.items}"
+            app:layoutManager="@{viewModel.layoutManager}" />
+    </com.tywho.common.widget.CustomerSwipeRefreshLayout>
+
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="roundradius">8dp</dimen>
+    <dimen name="emptyImageWidth">108dp</dimen>
+    <dimen name="emptyImageHeight">108dp</dimen>
+    <dimen name="loadingProgressBarWidth">25dp</dimen>
+    <dimen name="loadingProgressBarHeight">25dp</dimen>
+    <dimen name="errorImageWidth">108dp</dimen>
+    <dimen name="errorImageHeight">108dp</dimen>
+
+    <dimen name="mRight">20dp</dimen>
+    <dimen name="dimen_60dp">60dp</dimen>
+
+</resources>

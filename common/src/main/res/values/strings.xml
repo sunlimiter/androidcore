@@ -1,0 +1,12 @@
+<resources>
+    <item name="item_click_support" type="id" />
+    <item name="onRefreshListener" type="id" />
+    <item name="click_id" type="id" />
+
+    <string name="progressActivityErrorButton">重试一下</string>
+    <string name="progressActivityEmptyContentPlaceholder"> 暂无相关数据</string>
+    <string name="progressActivityErrorContentPlaceholder">网络不给力,请重新加载</string>
+    <string name="press_again_exit">再按一次退出</string>
+
+
+</resources>

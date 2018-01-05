@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.tywho.common.viewmodel.BaseViewModel" />
+
+        <variable
+            name="msg"
+            type="String" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:visibility="@{safeUnbox(viewModel.loadMoreStatusError)?View.GONE:View.VISIBLE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="正在加载" />
+
+            <ProgressBar
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:indeterminateBehavior="repeat"
+                android:indeterminateDrawable="@drawable/progress_anim"
+                android:indeterminateOnly="true" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{safeUnbox(viewModel.loadMoreStatusError) ? View.VISIBLE : View.GONE}"
+            app:setLoadMoreReload="@{viewModel}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="服务器异常,点击重试"
+                android:textSize="20dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>
